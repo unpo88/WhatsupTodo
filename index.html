@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .red {
+        color: #ff0000;
+      }
+      .blue {
+        color: #0000ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Cities</h1>
+      <ul>
+        <li id="one" class="red">Seoul</li>
+        <li id="two" class="red">London</li>
+        <li id="three" class="red">Newyork</li>
+        <li id="four">Tokyo</li>
+      </ul>
+    </div>
+    <script>
+      const ul = document.querySelector("ul");
+
+      // innerHTML 프로퍼티는 모든 자식 요소를 포함하는 모든 콘텐츠를 하나의 문자열로 취득할 수 있다. 이 문자열은 마크업을 포함한다.
+      console.log(ul.innerHTML);
+      // IE를 제외한 대부분의 브라우저들은 요소 사이의 공백 또는 줄바꿈 문자를 텍스트 노드로 취급한다
+      /*
+        <li id="one" class="red">Seoul</li>
+        <li id="two" class="red">London</li>
+        <li id="three" class="red">Newyork</li>
+        <li id="four">Tokyo</li>
+*/
+
+      const one = document.getElementById("one");
+
+      // 마크업이 포함된 콘텐츠 취득
+      console.log(one.innerHTML); // Seoul
+
+      // 마크업이 포함된 콘텐츠 변경
+      one.innerHTML += '<em class="blue">, Korea</em>';
+
+      // 마크업이 포함된 콘텐츠 취득
+      console.log(one.innerHTML); // Seoul <em class="blue">, Korea</em>
+    </script>
+  </body>
+</html>
+
